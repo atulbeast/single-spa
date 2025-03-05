@@ -12,7 +12,7 @@ function App({store}) {
       <p>Counter: {count}</p>
       <div className='container'>
       <button onClick={() => setCount(count + 1)}>Increase Counter</button>
-      <button onClick={() => navigateToUrl("/")}>Back to Host2</button>
+      <button onClick={() => navigateToUrl("/")}>Back to Host</button>
       </div>
       <div className="bounce"></div>
     </div>
