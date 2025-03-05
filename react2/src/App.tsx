@@ -1,18 +1,21 @@
 import { useEffect, useState } from 'react';
 import { navigateToUrl } from 'single-spa';
+import './App.style.css';
+function App({store}) {
 
-function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] =useState(store.getState().counter);
   useEffect(()=>{
-    const mfCounterEvent = new CustomEvent("mfCounter-update", { detail: count });
-    window.dispatchEvent(mfCounterEvent);
+   store.setState({counter: count});
   },[count]);
   return (
     <div>
       <h2>MF2 Page</h2>
       <p>Counter: {count}</p>
+      <div className='container'>
       <button onClick={() => setCount(count - 2)}>Decrease Counter</button>
       <button onClick={() => navigateToUrl("/")}>Back to Host</button>
+      </div>
+      <div className='tile'></div>
     </div>
   );
 }

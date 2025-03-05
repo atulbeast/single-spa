@@ -1,5 +1,6 @@
 import App from "./App";
 
-export default function Root(props) {
-  return <section><App/></section>;
+export default function Root({globalStore}) {
+
+  return <section><App store={globalStore}/></section>;
 }

@@ -1,0 +1,17 @@
+.bounce {
+    width: 100px;
+    height: 100px;
+    background-color: royalblue;
+    border-radius: 10px;
+    position: relative;
+    animation: bounce 1s infinite alternate ease-in-out;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-50px);
+    }
+}

@@ -11,6 +11,10 @@ module.exports = (webpackConfigEnv, argv) => {
   });
 
   return merge(defaultConfig, {
+    optimization: {
+      usedExports: true,
+      minimize: true
+    }
     // modify the webpack config however you'd like to by adding to this object
   });
 };

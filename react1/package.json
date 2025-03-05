@@ -1,5 +1,6 @@
 {
   "name": "@atul/react1",
+  "sideEffects": false,
   "scripts": {
     "start": "webpack serve",
     "start:standalone": "webpack serve --env standalone",

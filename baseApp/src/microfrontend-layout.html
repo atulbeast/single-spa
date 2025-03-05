@@ -19,10 +19,14 @@
 
   <main>
     <route default>
+      <h2>Home Page</h2>
+      <div class="container">
       <button onclick="singleSpaNavigate('/react1')">Go to MF1</button>
       <button onclick="singleSpaNavigate('/react2')">Go to MF2</button>
+    </div>
+    <div class="container">
       <div id="displayCount"></div>
-
+    </div>
     </route>
     <route path="/react1">
       <application name="@atul/root-react1"></application>
