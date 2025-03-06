@@ -7,6 +7,7 @@ function App({store,eventBus}) {
   const [count, setCount] =useState(store.getState().counter);
   useEffect(()=>{
    store.setState({counter: count});
+   console.log('React 2: updated value: '+count);
    eventBus.emit("counterUpdated", "Counter updated by react2, current value: "+count);
   },[count]);
   return (
