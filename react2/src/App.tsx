@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { navigateToUrl } from 'single-spa';
 import './App.style.css';
-function App({store}) {
+
+function App({store,eventBus}) {
 
   const [count, setCount] =useState(store.getState().counter);
   useEffect(()=>{
    store.setState({counter: count});
+   eventBus.emit("counterUpdated", "Counter updated by react2, current value: "+count);
   },[count]);
   return (
     <div>

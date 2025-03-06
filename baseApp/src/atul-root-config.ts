@@ -7,6 +7,7 @@ import {
 import microfrontendLayout from "./microfrontend-layout.html";
 import {createStore} from "zustand/vanilla";
 import { getMountedApps } from "single-spa";
+import { eventBus } from "./type/EventBus";
 
 function isRootConfigActive() {
   return getMountedApps().length === 0; // No active microfrontends → Root page is shown
@@ -50,7 +51,7 @@ const applications = constructApplications({
 applications.forEach((app) => {
   registerApplication({
     ...app,
-    customProps: { globalStore: window.globalStore },
+    customProps: { globalStore: window.globalStore, eventBus: eventBus },
   });
 });
 const layoutEngine = constructLayoutEngine({ routes, applications });
